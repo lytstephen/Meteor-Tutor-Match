@@ -1,0 +1,39 @@
+<template name="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tutor Match</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="{{pathFor 'job_list'}}">Browse Jobs</a></li>
+                    <li><a href="{{pathFor 'TutorList'}}">Browse Tutors</a></li>
+                    <li><a href="{{pathFor 'post_job'}}">Post a Job</a></li>
+                    {{#if currentUser}}
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                My Account <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{pathFor 'UpdateProfile'}}">My Profile</a></li>
+                                <li><a href="{{pathFor 'my_posted_jobs'}}">My Posted Jobs</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" id="logout">Sign Out</a></li>
+                            </ul>
+                        </li>
+                    {{else}}
+                        <li><a href="/sign-in">Login / Signup</a></li>
+                    {{/if}}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</template>

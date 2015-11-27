@@ -1,0 +1,43 @@
+<template name="job_list">
+
+<div class="well well-lg">
+
+    <section class="row">
+        <div class="col-md-3">
+            <h2>Subject</h2>
+            <br/>
+
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="{{pathFor 'job_list'}}">All</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='math'}}">Math</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='english'}}">English</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='econ'}}">Econ</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='chem'}}">Chemistry</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='web'}}">Web Design</a></li>
+                <li role="presentation"><a href="{{pathFor 'job_list' subject='stat'}}">Statistics</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <ul class="list-group">
+
+                {{#each jobs}}
+                    <li class="list-group-item">
+                        <div class="job-details text-right">
+                            <a href="{{pathFor 'JobDetails'}}" class="btn btn-primary">Details</a>
+                            <div style="margin: 10px"></div>
+                            <small>Posted on: {{submitted_readable}}</small>
+                        </div>
+                        <h4>{{title}}, {{location}}, {{price}}</h4>
+                        <p>{{description}}&nbsp;</p>
+                    </li>
+                {{/each}}
+
+            </ul>
+        </div>
+
+    </section>
+
+</div>
+
+</template>

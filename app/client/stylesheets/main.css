@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#wrapper:after {
+    content: "";
+    display: block;
+}
+
+#footer, #wrapper:after {
+    height: 50px;
+}
+
+body {
+    padding-top: 80px;
+    background: url('/img/header.jpg') center;
+    background-size: cover;
+}
+
+h2, p {
+    color: #ddd;
+}
+
+.well h2, .well p {
+    color: #333
+}
+
+.navbar {
+    background-color: #333;
+    color: #ddd;
+}
+
+#footer {
+    background-color: #333;
+    color: #fff;
+}
+
+#footer .container {
+    padding-top: 15px;
+}
+
+.profileImg {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}

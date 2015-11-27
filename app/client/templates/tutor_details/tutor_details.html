@@ -1,0 +1,52 @@
+<template name="TutorDetails">
+    <div class="well well-lg">
+
+        <section class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <section class="row">
+                    <div class="col-md-3">
+                        <img class="profileImg" src="{{getProfileImage _id}}" alt=""/>
+                    </div>
+                    <div class="col-md-9">
+                        <h2>{{name}}</h2>
+                        <h4>{{subjectList}}</h4>
+                        <h4>{{price}}</h4>
+                        <p>{{location}}</p>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="row">
+                    <p>{{summary}}</p>
+                </section>
+
+                <hr/>
+
+                <section class="row">
+                    <h4>Request this Tutor for my Job:</h4>
+
+                    {{#each myJobs}}
+
+                        <li class="list-group-item">
+                            <div class="job-details text-right">
+                                {{#if tutorId}}
+                                    <h4>Booked {{tutorName tutorId}}</h4>
+                                {{else}}
+                                    <button class="book btn btn-success" data-job="{{_id}}">Book for this Job</button>
+                                {{/if}}
+                                <div style="margin: 10px"></div>
+                                <small>Posted on: {{submitted_readable createdAt}}</small>
+                            </div>
+                            <h4>{{title}}, {{location}}, {{price}}</h4>
+                            <p>{{description}}&nbsp;</p>
+                        </li>
+                    {{/each}}
+                </section>
+
+            </div>
+        </section>
+
+    </div>
+</template>

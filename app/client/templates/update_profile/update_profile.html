@@ -1,0 +1,101 @@
+<template name="UpdateProfile">
+
+    <div class="well well-lg">
+
+        <section class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+
+                <section class="row">
+                    <div class="col-md-4">
+                        <img src="{{getProfileImage _id}}" alt="" width="150"/>
+                    </div>
+
+                    <div class="col-md-8">
+                        <form class="main form page" id="image" enctype="multipart/form-data">
+                            <h4>Upload Profile Image:</h4>
+                            <input type="file" name="profileImage" id="profileImage"/>
+                            <br/>
+                            <input type="submit" value="Update Profile Image" class="btn btn-primary"/>
+                        </form>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="row">
+
+                    <form class="main form page" id="update">
+
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input name="name" id="name" type="text" value="{{name}}" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email</label>
+                            <div class="controls">
+                                <input name="email" id="email" type="text" value="{{email}}" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="price">Price</label>
+                            <div class="controls">
+                                <input name="price" id="price" type="text" value="{{price}}" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="location">Preferred Locations</label>
+                            <div class="controls">
+                                <input name="location" id="location"
+                                       type="text" value="{{location}}" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <label class="control-label">Subjects you can tutor:</label>
+                        <div class="checkbox">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="math" value="math" {{fieldCheck 'math'}}> Math
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="econ" value="econ" {{fieldCheck 'econ'}}> Econ
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="chem" value="chem" {{fieldCheck 'chem'}}> Chemistry
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="english" value="english" {{fieldCheck 'english'}}> English
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="web" value="web" {{fieldCheck 'web'}}> Web Design
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="stat" value="stat" {{fieldCheck 'stat'}}> Statistics
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="summary">Summary</label>
+                            <div class="controls">
+                        <textarea name="summary" id="summary" type="text"
+                                  value="{{summary}}" class="form-control" rows="6"></textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Submit" class="btn btn-primary"/>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</template>

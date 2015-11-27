@@ -1,0 +1,31 @@
+<template name="my_posted_jobs">
+
+<div class="well well-lg">
+
+    <section class="row">
+
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-center">My Posted Jobs</h2>
+
+            <ul class="list-group">
+
+                {{#each myJobs}}
+                    <li class="list-group-item">
+                        <div class="job-details text-right">
+                            <a href="{{pathFor 'JobDetails'}}" class="btn btn-primary">Details</a>
+                            <div style="margin: 10px"></div>
+                            <small>Posted on: {{submitted_readable}}</small>
+                        </div>
+                        <h4>{{title}}, {{location}}, {{price}}</h4>
+                        <p>{{description}}&nbsp;</p>
+                    </li>
+                {{/each}}
+
+            </ul>
+        </div>
+
+    </section>
+
+</div>
+
+</template>

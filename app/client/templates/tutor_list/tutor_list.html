@@ -1,0 +1,43 @@
+<template name="TutorList">
+    <div class="well well-lg">
+
+        <section class="row">
+            <div class="col-md-3">
+                <h2>Subject</h2>
+                <br/>
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="{{pathFor 'TutorList'}}">All</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='math'}}">Math</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='english'}}">English</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='econ'}}">Econ</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='chem'}}">Chemistry</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='web'}}">Web Design</a></li>
+                    <li role="presentation"><a href="{{pathFor 'TutorList' subject='stat'}}">Statistics</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+                <ul class="list-group">
+
+                    {{#each tutors}}
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="{{getProfileImage _id}}" width="220">
+                                <div class="caption">
+                                    <h3>{{name}}</h3>
+                                    <h4>{{price}}</h4>
+                                    <p>{{subjectList}}</p>
+                                    <p><a href="{{pathFor 'TutorDetails'}}" class="btn btn-primary" role="button">Request This Tutor</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+</template>

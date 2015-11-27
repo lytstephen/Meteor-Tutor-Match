@@ -1,0 +1,86 @@
+<template name="JobDetails">
+
+<div class="well well-lg">
+
+    <section class="row">
+
+        <div class="col-md-8 col-md-offset-2">
+
+            <h2>{{title}} - {{price}}</h2>
+            <h4>Location: {{location}}</h4>
+            <p>Posted on: {{submitted_readable}}</p>
+
+            <hr/>
+
+            <h4>Subjects: {{subjectList}}</h4>
+            <p>{{description}}</p>
+
+            <hr/>
+
+            {{#if ownPost}}
+                <br/>
+            	<a href="{{pathFor 'JobEdit'}}" class="btn btn-primary">Edit Job Post</a>
+            {{else}}
+                {{#if currentUser}}
+                    <p>Interested in tutoring for this job? Apply below:</p>
+
+                    <form class="main form page" id="apply">
+
+                        <div class="form-group">
+                            <textarea name="description" id="description" type="text"
+                                      value="" class="form-control" rows="6"></textarea>
+                        </div>
+
+                        <input type="submit" value="Apply" class="btn btn-primary"/>
+
+                    </form>
+
+                {{else}}
+                    <p>Interested in tutoring for this job? Sign Up or Login to Apply.</p>
+                {{/if}}
+            {{/if}}
+
+            <hr/>
+
+            {{#if ownPost}}
+
+            <h4>Tutors Applied</h4>
+
+                <!--if there's a tutor ID, then just show his info and display booked-->
+                {{#if tutorId}}
+                    <li class="list-group-item">
+                        <div class="job-details text-right">
+                            <p style="color:green">BOOKED!</p>
+                            <button class="cancel-book btn btn-danger">Cancel this Tutor</button>
+                        </div>
+                        <h5>{{bookedTutorName tutorId}}</h5>
+                        <p>{{description}}&nbsp;</p>
+                    </li>
+                {{else}}
+                    <!--if not then show the list of applicants and option to book-->
+                    {{#each applications}}
+                        <li class="list-group-item">
+                            <div class="job-details text-right">
+                                <small>Applied on: {{submitted_readable}}</small>
+                                <br/>
+                                <a href="#" class="tutor-details btn btn-primary" data-tutor="{{userId}}">Tutor Details</a>
+                                <button class="book btn btn-success" data-book="{{userId}}">Book this Tutor</button>
+                            </div>
+                            <h5>{{getTutorName userId}}</h5>
+                            <p>{{description}}&nbsp;</p>
+                        </li>
+                    {{else}}
+                        <p>No Tutors Applied for the Job Yet.</p>
+                        <a href="{{pathFor 'TutorList'}}">Browse and Request Tutors</a>
+                    {{/each}}
+                {{/if}}
+
+            {{/if}}
+
+        </div>
+
+    </section>
+
+</div>
+
+</template>
