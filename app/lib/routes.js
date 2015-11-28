@@ -47,20 +47,35 @@ Router.route('/', {
 
 Router.route('job_list/:subject?', {
   name: 'job_list',
-  controller: 'JobsController',
-  action: 'list'
+  template: 'job_list',
+  subscriptions: function() {
+    this.subscribe('jobs');
+  },
+  data: function() {
+    return Jobs.find();
+  }
 });
 
 Router.route('post_job', {
   name: 'post_job',
-  controller: 'JobsController',
-  action: 'post'
+  template: 'post_job',
+  subscriptions: function() {
+    this.subscribe('jobs');
+  },
+  data: function() {
+    return Jobs.find();
+  }
 });
 
 Router.route('my_posted_jobs', {
   name: 'my_posted_jobs',
-  controller: 'JobsController',
-  action: 'myJobs'
+  template: 'my_posted_jobs',
+  subscriptions: function() {
+    this.subscribe('jobs');
+  },
+  data: function() {
+    return Jobs.find();
+  }
 });
 
 Router.route('job_details/:_id', {

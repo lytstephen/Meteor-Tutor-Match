@@ -8,7 +8,8 @@ Jobs.attachSchema(new SimpleSchema({
   },
   subjects: {
     type: [String],
-    label: 'Subjects'
+    label: 'Subjects',
+    optional: true
   },
   location: {
     type: String,
