@@ -35,7 +35,13 @@ AccountsTemplates.configure({
   }
 });
 
-AccountsTemplates.configureRoute('signIn');
+AccountsTemplates.configureRoute('signIn', {
+  redirect: function(){
+    var user = Meteor.user();
+    if (user)
+      Router.go('/update_profile/');
+  }
+});
 
 // ------ Accounts ENDS ------ //
 

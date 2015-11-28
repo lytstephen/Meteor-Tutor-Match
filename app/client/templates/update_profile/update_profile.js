@@ -5,7 +5,15 @@ Template.UpdateProfile.helpers({
   },
 
   fieldCheck: function(field) {
-    return _.contains(this.subjects, field) ? 'checked' : ''
+    return _.contains(this.subjects, field) ? 'checked' : '';
+  },
+
+  isTutorCheck: function() {
+    return this.isTutor ? 'checked' : '';
+  },
+
+  displayTutorInfo: function() {
+    return this.isTutor ? 'block' : 'none';
   }
 
 });
@@ -51,6 +59,12 @@ Template.UpdateProfile.events({
     alert('Profile Updated!');
 
     Meteor.users.update( Meteor.userId(), {$set: doc} )
+  },
+
+  'change #isTutor': function() {
+    var checked = this.isTutor;
+    var operator = checked ? {$set: {isTutor: false}} : {$set: {isTutor: true}};
+    Meteor.users.update( Meteor.userId(), operator);
   },
 
   'change #math': function() {

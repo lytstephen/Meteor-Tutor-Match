@@ -41,50 +41,62 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label" for="price">Price</label>
-                            <div class="controls">
-                                <input name="price" id="price" type="text" value="{{price}}" class="form-control"/>
-                            </div>
-                        </div>
+                        <hr/>
 
-                        <div class="form-group">
-                            <label class="control-label" for="location">Preferred Locations</label>
-                            <div class="controls">
-                                <input name="location" id="location"
-                                       type="text" value="{{location}}" class="form-control"/>
-                            </div>
-                        </div>
-
-                        <label class="control-label">Subjects you can tutor:</label>
                         <div class="checkbox">
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="math" value="math" {{fieldCheck 'math'}}> Math
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="econ" value="econ" {{fieldCheck 'econ'}}> Econ
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="chem" value="chem" {{fieldCheck 'chem'}}> Chemistry
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="english" value="english" {{fieldCheck 'english'}}> English
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="web" value="web" {{fieldCheck 'web'}}> Web Design
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="stat" value="stat" {{fieldCheck 'stat'}}> Statistics
+                                <input type="checkbox" id="isTutor" value="isTutor" {{isTutorCheck}}>Register as Tutor
                             </label>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label" for="summary">Summary</label>
-                            <div class="controls">
-                        <textarea name="summary" id="summary" type="text"
-                                  value="{{summary}}" class="form-control" rows="6"></textarea>
+                        <section class="tutor-info" style="display: {{displayTutorInfo}}">
+
+                            <div class="form-group">
+                                <label class="control-label" for="price">Price</label>
+                                <div class="controls">
+                                    <input name="price" id="price" type="text" value="{{price}}" class="form-control"/>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="location">Preferred Locations</label>
+                                <div class="controls">
+                                    <input name="location" id="location"
+                                           type="text" value="{{location}}" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <label class="control-label">Subjects you can tutor:</label>
+                            <div class="checkbox">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="math" value="math" {{fieldCheck 'math'}}> Math
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="econ" value="econ" {{fieldCheck 'econ'}}> Econ
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="chem" value="chem" {{fieldCheck 'chem'}}> Chemistry
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="english" value="english" {{fieldCheck 'english'}}> English
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="web" value="web" {{fieldCheck 'web'}}> Web Design
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="stat" value="stat" {{fieldCheck 'stat'}}> Statistics
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="summary">Summary</label>
+                                <div class="controls">
+                            <textarea name="summary" id="summary" type="text"
+                                      value="{{summary}}" class="form-control" rows="6"></textarea>
+                                </div>
+                            </div>
+
+                        </section>
 
                         <input type="submit" value="Submit" class="btn btn-primary"/>
 

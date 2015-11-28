@@ -2,7 +2,7 @@ Template.TutorList.helpers({
 
   tutors: function() {
     var subject = Session.get('subject');
-    var doc = subject ? {subjects: subject} : {};
+    var doc = subject ? {subjects: subject, isTutor: true} : {isTutor: true};
 
     return Meteor.users.find(doc);
   },
