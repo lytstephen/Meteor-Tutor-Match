@@ -1,4 +1,3 @@
-Live Preview:
-http://lytstephen_tutor.meteor.com/
+Live Preview: http://lytstephen_tutor.meteor.com/
 
-(It's hosted on with free Meteor hosting, so sometimes takes a little while to load up)
+(It's hosted with free meteor.com hosting, so sometimes takes a little while to load up)
